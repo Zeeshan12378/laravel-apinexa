@@ -1,5 +1,5 @@
 {
-    "name": "apiforge/apiforge",
+    "name": "zmjcoder/apiforge",
     "version": "1.0.0",
     "description": "File-first API schema engine for Laravel — registry, docs, and signed API keys.",
     "keywords": [
@@ -14,8 +14,8 @@
     "type": "library",
     "authors": [
         {
-            "name": "ApiForge",
-            "email": "hello@apiforge.dev"
+            "name": "Zeeshan Mushtaq Joyia",
+            "email": "zeeshamushtaqdev786@gmail.com"
         }
     ],
     "require": {
@@ -33,21 +33,21 @@
     },
     "autoload": {
         "psr-4": {
-            "ApiForge\\": "src/"
+            "ZMJCoder\\ApiForge\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "ApiForge\\Tests\\": "tests/"
+            "ZMJCoder\\ApiForge\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "ApiForge\\ApiForgeServiceProvider"
+                "ZMJCoder\\ApiForge\\ApiForgeServiceProvider"
             ],
             "aliases": {
-                "ApiForge": "ApiForge\\Facades\\ApiForge"
+                "ApiForge": "ZMJCoder\\ApiForge\\Facades\\ApiForge"
             }
         }
     },
