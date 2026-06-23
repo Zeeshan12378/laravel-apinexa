@@ -33,21 +33,21 @@
     },
     "autoload": {
         "psr-4": {
-            "ZeeshanMushtaq\\APINEXA\\": "src/"
+            "ZeeshanMushtaq\\ApiNexa\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "ZeeshanMushtaq\\APINEXA\\Tests\\": "tests/"
+            "ZeeshanMushtaq\\ApiNexa\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "ZeeshanMushtaq\\APINEXA\\APINEXAServiceProvider"
+                "ZeeshanMushtaq\\ApiNexa\\ApiNexaServiceProvider"
             ],
             "aliases": {
-                "APINEXA": "ZeeshanMushtaq\\APINEXA\\Facades\\APINEXA"
+                "ApiNexa": "ZeeshanMushtaq\\ApiNexa\\Facades\\ApiNexa"
             }
         }
     },
