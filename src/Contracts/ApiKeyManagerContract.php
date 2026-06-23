@@ -1,8 +1,8 @@
 <?php
 
-namespace ApiForge\Contracts;
+namespace ZMJCoder\ApiNexa\Contracts;
 
-use ApiForge\Support\SignedApiKey;
+use ZMJCoder\ApiNexa\Support\SignedApiKey;
 
 interface ApiKeyManagerContract
 {
@@ -22,3 +22,4 @@ interface ApiKeyManagerContract
 
     public function isRevoked(string $keyId): bool;
 }
+

@@ -1,13 +1,13 @@
 <?php
 
-namespace ApiForge\Tests\Unit;
+namespace ZMJCoder\ApiNexa\Tests\Unit;
 
-use ApiForge\Contracts\SchemaLoaderContract;
-use ApiForge\Contracts\SchemaValidatorContract;
-use ApiForge\Core\ApiRegistry;
-use ApiForge\Core\SchemaLoader;
-use ApiForge\Core\SchemaValidator;
-use ApiForge\Tests\TestCase;
+use ZMJCoder\ApiNexa\Contracts\SchemaLoaderContract;
+use ZMJCoder\ApiNexa\Contracts\SchemaValidatorContract;
+use ZMJCoder\ApiNexa\Core\ApiRegistry;
+use ZMJCoder\ApiNexa\Core\SchemaLoader;
+use ZMJCoder\ApiNexa\Core\SchemaValidator;
+use ZMJCoder\ApiNexa\Tests\TestCase;
 
 class SchemaEngineTest extends TestCase
 {
@@ -48,3 +48,4 @@ class SchemaEngineTest extends TestCase
         $this->assertNotEmpty($result->errors);
     }
 }
+

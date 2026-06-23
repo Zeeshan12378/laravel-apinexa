@@ -1,6 +1,6 @@
-# Contributing to APIForge
+# Contributing to APINEXA
 
-Thank you for contributing to APIForge ❤️
+Thank you for contributing to APINEXA ❤️
 
 We welcome bug fixes, improvements, and new features.
 
@@ -9,6 +9,6 @@ We welcome bug fixes, improvements, and new features.
 ## 🚀 Setup Project
 
 ```bash
-git clone https://github.com/zmjcoder/laravel-api-forge.git
-cd laravel-api-forge
+git clone https://github.com/zmjcoder/laravel-api-nexa.git
+cd laravel-api-nexa
 composer install

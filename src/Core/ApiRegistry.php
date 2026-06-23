@@ -1,14 +1,14 @@
 <?php
 
-namespace ApiForge\Core;
+namespace ZMJCoder\ApiNexa\Core;
 
-use ApiForge\Contracts\ApiRegistryContract;
-use ApiForge\Contracts\SchemaLoaderContract;
-use ApiForge\Contracts\SchemaValidatorContract;
-use ApiForge\Exceptions\SchemaValidationException;
-use ApiForge\Support\ConfigHash;
-use ApiForge\Support\EndpointDescriptor;
-use ApiForge\Support\RegistrySnapshot;
+use ZMJCoder\ApiNexa\Contracts\ApiRegistryContract;
+use ZMJCoder\ApiNexa\Contracts\SchemaLoaderContract;
+use ZMJCoder\ApiNexa\Contracts\SchemaValidatorContract;
+use ZMJCoder\ApiNexa\Exceptions\SchemaValidationException;
+use ZMJCoder\ApiNexa\Support\ConfigHash;
+use ZMJCoder\ApiNexa\Support\EndpointDescriptor;
+use ZMJCoder\ApiNexa\Support\RegistrySnapshot;
 use Illuminate\Contracts\Cache\Repository as CacheRepository;
 use Illuminate\Filesystem\Filesystem;
 
@@ -25,11 +25,11 @@ class ApiRegistry implements ApiRegistryContract
 
     public function load(): RegistrySnapshot
     {
-        if ($this->memory !== null && ! config('apiforge.schemas.hot_reload', false)) {
+        if ($this->memory !== null && ! config('apinexa.schemas.hot_reload', false)) {
             return $this->memory;
         }
 
-        if (config('apiforge.cache.enabled', true)) {
+        if (config('apinexa.cache.enabled', true)) {
             $cached = $this->readFromCache();
 
             if ($cached !== null) {
@@ -49,7 +49,7 @@ class ApiRegistry implements ApiRegistryContract
 
     public function find(string $method, string $uri, ?string $version = null): ?EndpointDescriptor
     {
-        $version ??= (string) config('apiforge.default_version', 'v1');
+        $version ??= (string) config('apinexa.default_version', 'v1');
         $key = EndpointDescriptor::makeKey($version, $method, $uri);
 
         return $this->load()->endpoints[$key] ?? null;
@@ -57,7 +57,7 @@ class ApiRegistry implements ApiRegistryContract
 
     public function reload(): RegistrySnapshot
     {
-        $defaultVersion = (string) config('apiforge.default_version', 'v1');
+        $defaultVersion = (string) config('apinexa.default_version', 'v1');
         $endpoints = [];
         $fileHashes = [];
         $errors = [];
@@ -131,22 +131,22 @@ class ApiRegistry implements ApiRegistryContract
 
     protected function writeToCache(RegistrySnapshot $snapshot): void
     {
-        if (! config('apiforge.cache.enabled', true)) {
+        if (! config('apinexa.cache.enabled', true)) {
             return;
         }
 
         $this->cache->put(
             $this->cacheKey(),
             $snapshot->toArray(),
-            (int) config('apiforge.cache.ttl', 86400)
+            (int) config('apinexa.cache.ttl', 86400)
         );
     }
 
     protected function cacheKey(): string
     {
-        $prefix = (string) config('apiforge.cache.prefix', 'apiforge');
+        $prefix = (string) config('apinexa.cache.prefix', 'APINEXA');
 
-        return "{$prefix}.".config('apiforge.cache.registry_key', 'registry');
+        return "{$prefix}.".config('apinexa.cache.registry_key', 'registry');
     }
 
     /**
@@ -163,3 +163,4 @@ class ApiRegistry implements ApiRegistryContract
         return $hashes;
     }
 }
+

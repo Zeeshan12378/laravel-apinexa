@@ -1,6 +1,6 @@
 # Security Policy
 
-APIForge takes security seriously.
+APINEXA takes security seriously.
 
 ---
 

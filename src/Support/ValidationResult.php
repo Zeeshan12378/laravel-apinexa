@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiForge\Support;
+namespace ZMJCoder\ApiNexa\Support;
 
 final readonly class ValidationResult
 {
@@ -25,3 +25,4 @@ final readonly class ValidationResult
         return new self(false, $errors);
     }
 }
+

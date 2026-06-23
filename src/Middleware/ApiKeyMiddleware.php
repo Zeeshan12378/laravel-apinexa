@@ -1,11 +1,11 @@
 <?php
 
-namespace ApiForge\Middleware;
+namespace ZMJCoder\ApiNexa\Middleware;
 
-use ApiForge\Contracts\ApiRegistryContract;
-use ApiForge\Contracts\SignatureValidatorContract;
-use ApiForge\Exceptions\InvalidApiKeyException;
-use ApiForge\Support\EndpointDescriptor;
+use ZMJCoder\ApiNexa\Contracts\ApiRegistryContract;
+use ZMJCoder\ApiNexa\Contracts\SignatureValidatorContract;
+use ZMJCoder\ApiNexa\Exceptions\InvalidApiKeyException;
+use ZMJCoder\ApiNexa\Support\EndpointDescriptor;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -25,7 +25,7 @@ class ApiKeyMiddleware
             return $next($request);
         }
 
-        $header = (string) config('apiforge.keys.header', 'X-Api-Key');
+        $header = (string) config('apinexa.keys.header', 'X-Api-Key');
         $apiKey = $request->header($header);
 
         if (! is_string($apiKey) || $apiKey === '') {
@@ -48,8 +48,8 @@ class ApiKeyMiddleware
             return response()->json(['message' => 'API key lacks endpoint permission.'], 403);
         }
 
-        $request->attributes->set('apiforge.api_key', $verified);
-        $request->attributes->set('apiforge.endpoint', $endpoint);
+        $request->attributes->set('APINEXA.api_key', $verified);
+        $request->attributes->set('APINEXA.endpoint', $endpoint);
 
         return $next($request);
     }
@@ -80,3 +80,4 @@ class ApiKeyMiddleware
         return true;
     }
 }
+

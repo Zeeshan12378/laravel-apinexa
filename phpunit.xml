@@ -5,7 +5,7 @@
          colors="true"
          cacheDirectory=".phpunit.cache">
     <testsuites>
-        <testsuite name="ApiForge Test Suite">
+        <testsuite name="APINEXA Test Suite">
             <directory>tests</directory>
         </testsuite>
     </testsuites>
@@ -15,3 +15,4 @@
         </include>
     </source>
 </phpunit>
+

@@ -1,9 +1,9 @@
 <?php
 
-namespace ApiForge\Core;
+namespace ZMJCoder\ApiNexa\Core;
 
-use ApiForge\Contracts\SchemaValidatorContract;
-use ApiForge\Support\ValidationResult;
+use ZMJCoder\ApiNexa\Contracts\SchemaValidatorContract;
+use ZMJCoder\ApiNexa\Support\ValidationResult;
 
 class SchemaValidator implements SchemaValidatorContract
 {
@@ -55,3 +55,4 @@ class SchemaValidator implements SchemaValidatorContract
         return $errors === [] ? ValidationResult::pass() : ValidationResult::fail($errors);
     }
 }
+

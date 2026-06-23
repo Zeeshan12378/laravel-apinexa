@@ -1,11 +1,11 @@
 <?php
 
-namespace ApiForge\Tests\Feature;
+namespace ZMJCoder\ApiNexa\Tests\Feature;
 
-use ApiForge\Auth\ApiKeyManager;
-use ApiForge\Contracts\ApiRegistryContract;
-use ApiForge\Middleware\ApiKeyMiddleware;
-use ApiForge\Tests\TestCase;
+use ZMJCoder\ApiNexa\Auth\ApiKeyManager;
+use ZMJCoder\ApiNexa\Contracts\ApiRegistryContract;
+use ZMJCoder\ApiNexa\Middleware\ApiKeyMiddleware;
+use ZMJCoder\ApiNexa\Tests\TestCase;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -34,7 +34,7 @@ class ApiKeyMiddlewareTest extends TestCase
         Route::middleware(ApiKeyMiddleware::class)->post('/jobs', function (Request $request) {
             return response()->json([
                 'created' => true,
-                'key' => $request->attributes->get('apiforge.api_key')?->keyId,
+                'key' => $request->attributes->get('APINEXA.api_key')?->keyId,
             ]);
         });
 
@@ -51,3 +51,4 @@ class ApiKeyMiddlewareTest extends TestCase
             ->assertJson(['created' => true, 'key' => $key->keyId]);
     }
 }
+

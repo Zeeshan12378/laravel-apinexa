@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiForge\Support;
+namespace ZMJCoder\ApiNexa\Support;
 
 final readonly class EndpointDescriptor
 {
@@ -59,3 +59,4 @@ final readonly class EndpointDescriptor
         return $uri === '/' ? $uri : rtrim($uri, '/');
     }
 }
+

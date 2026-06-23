@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiForge\Contracts;
+namespace ZMJCoder\ApiNexa\Contracts;
 
 interface SchemaLoaderContract
 {
@@ -16,3 +16,4 @@ interface SchemaLoaderContract
      */
     public function discover(): array;
 }
+

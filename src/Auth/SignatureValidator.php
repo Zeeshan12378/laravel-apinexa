@@ -1,10 +1,10 @@
 <?php
 
-namespace ApiForge\Auth;
+namespace ZMJCoder\ApiNexa\Auth;
 
-use ApiForge\Contracts\SignatureValidatorContract;
-use ApiForge\Exceptions\InvalidApiKeyException;
-use ApiForge\Support\VerifiedApiKey;
+use ZMJCoder\ApiNexa\Contracts\SignatureValidatorContract;
+use ZMJCoder\ApiNexa\Exceptions\InvalidApiKeyException;
+use ZMJCoder\ApiNexa\Support\VerifiedApiKey;
 use Illuminate\Contracts\Cache\Repository as CacheRepository;
 
 class SignatureValidator implements SignatureValidatorContract
@@ -95,7 +95,7 @@ class SignatureValidator implements SignatureValidatorContract
 
     protected function signingKey(): string
     {
-        $key = config('apiforge.keys.signing_key');
+        $key = config('apinexa.keys.signing_key');
 
         if (is_string($key) && $key !== '') {
             return $key;
@@ -116,9 +116,10 @@ class SignatureValidator implements SignatureValidatorContract
 
     protected function isRevoked(string $keyId): bool
     {
-        $prefix = (string) config('apiforge.keys.revocation_prefix', 'keys.revoked');
-        $cachePrefix = (string) config('apiforge.cache.prefix', 'apiforge');
+        $prefix = (string) config('apinexa.keys.revocation_prefix', 'keys.revoked');
+        $cachePrefix = (string) config('apinexa.cache.prefix', 'APINEXA');
 
         return (bool) $this->cache->get("{$cachePrefix}.{$prefix}.{$keyId}", false);
     }
 }
+

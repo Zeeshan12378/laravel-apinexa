@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiForge\Exceptions;
+namespace ZMJCoder\ApiNexa\Exceptions;
 
 use RuntimeException;
 
@@ -23,3 +23,4 @@ class SchemaValidationException extends RuntimeException
         return $this->errors;
     }
 }
+

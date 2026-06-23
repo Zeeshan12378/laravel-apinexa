@@ -1,8 +1,8 @@
 <?php
 
-namespace ApiForge\Core;
+namespace ZMJCoder\ApiNexa\Core;
 
-use ApiForge\Contracts\SchemaLoaderContract;
+use ZMJCoder\ApiNexa\Contracts\SchemaLoaderContract;
 use Illuminate\Filesystem\Filesystem;
 
 class SchemaLoader implements SchemaLoaderContract
@@ -33,8 +33,8 @@ class SchemaLoader implements SchemaLoaderContract
 
     public function discover(): array
     {
-        $paths = config('apiforge.schemas.paths', []);
-        $pattern = config('apiforge.schemas.pattern', '*.php');
+        $paths = config('apinexa.schemas.paths', []);
+        $pattern = config('apinexa.schemas.pattern', '*.php');
         $discovered = [];
 
         foreach ($paths as $directory) {
@@ -54,3 +54,4 @@ class SchemaLoader implements SchemaLoaderContract
         return $discovered;
     }
 }
+

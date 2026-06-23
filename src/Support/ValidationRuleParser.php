@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiForge\Support;
+namespace ZMJCoder\ApiNexa\Support;
 
 final class ValidationRuleParser
 {
@@ -68,3 +68,4 @@ final class ValidationRuleParser
         return $required;
     }
 }
+

@@ -1,8 +1,8 @@
 <?php
 
-namespace ApiForge\Contracts;
+namespace ZMJCoder\ApiNexa\Contracts;
 
-use ApiForge\Support\VerifiedApiKey;
+use ZMJCoder\ApiNexa\Support\VerifiedApiKey;
 
 interface SignatureValidatorContract
 {
@@ -13,3 +13,4 @@ interface SignatureValidatorContract
 
     public function verify(string $apiKey): VerifiedApiKey;
 }
+

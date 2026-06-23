@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to APIForge will be documented here.
+All notable changes to APINEXA will be documented here.
 
 ---
 

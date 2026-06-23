@@ -1,12 +1,12 @@
-# ApiForge Architecture
+# APINEXA Architecture
 
 ## 1. Purpose
 
-This document defines the architecture for ApiForge, a Git-based, AI-powered API Operating System for Laravel.
+This document defines the architecture for APINEXA, a Git-based, AI-powered API Operating System for Laravel.
 
 The goal is to prevent the package from becoming a tangled collection of controllers, helpers, and admin screens. Every major feature must live behind clear module boundaries, contracts, cache strategies, and runtime responsibilities.
 
-ApiForge must stay:
+APINEXA must stay:
 
 - File-first.
 - Runtime-driven.
@@ -51,11 +51,11 @@ Runtime request flow and documentation flow share the same source of truth: comp
 
 ### 3.1 File First
 
-API definitions live in files under `api-forge/`. Git is the source of truth. Database rows may support logs, metrics, history, or audit records, but they must not become the primary source for endpoint definitions.
+API definitions live in files under `api-nexa/`. Git is the source of truth. Database rows may support logs, metrics, history, or audit records, but they must not become the primary source for endpoint definitions.
 
 ### 3.2 Runtime Driven
 
-ApiForge is not only a static documentation generator. Runtime middleware uses the registry to identify endpoints, validate access, apply payload policy, rate limit API keys, and record usage.
+APINEXA is not only a static documentation generator. Runtime middleware uses the registry to identify endpoints, validate access, apply payload policy, rate limit API keys, and record usage.
 
 ### 3.3 Cache Optimized
 
@@ -86,8 +86,8 @@ Database is optional for analytics, audit records, AI usage, key metadata, and p
 
 ```text
 src/
-├── ApiForge.php
-├── ApiForgeServiceProvider.php
+├── APINEXA.php
+├── APINEXAServiceProvider.php
 ├── Analytics/
 ├── AI/
 ├── Auth/
@@ -113,7 +113,7 @@ Supporting package structure:
 
 ```text
 config/
-└── api-forge.php
+└── api-nexa.php
 
 database/
 └── migrations/
@@ -137,7 +137,7 @@ tests/
 Install command generated structure:
 
 ```text
-api-forge/
+api-nexa/
 ├── schemas/
 ├── permissions/
 ├── collections/
@@ -181,7 +181,7 @@ Rules:
 
 ## 6. Service Provider
 
-`ApiForgeServiceProvider` is the package composition root.
+`APINEXAServiceProvider` is the package composition root.
 
 Responsibilities:
 
@@ -250,12 +250,12 @@ interface AIProviderContract
 
 interface PermissionEngineContract
 {
-    public function authorize(ApiForgeRequestContext $context): PermissionDecision;
+    public function authorize(APINEXARequestContext $context): PermissionDecision;
 }
 
 interface PayloadEngineContract
 {
-    public function apply(ApiForgeRequestContext $context, array $payload): PayloadResult;
+    public function apply(APINEXARequestContext $context, array $payload): PayloadResult;
 }
 
 interface AnalyticsDriverContract
@@ -275,7 +275,7 @@ Contract rules:
 
 ## 8. Core Data Objects
 
-ApiForge should prefer typed immutable data objects for internal boundaries.
+APINEXA should prefer typed immutable data objects for internal boundaries.
 
 Important objects:
 
@@ -288,7 +288,7 @@ Important objects:
 - `ExportResult`
 - `AIRequest`
 - `AIResponse`
-- `ApiForgeRequestContext`
+- `APINEXARequestContext`
 - `PermissionDecision`
 - `PayloadResult`
 - `SignedApiKey`
@@ -697,7 +697,7 @@ Runtime pipeline:
 ```text
 Request
     ↓
-Identify ApiForge Endpoint
+Identify APINEXA Endpoint
     ↓
 API Key Middleware
     ↓
@@ -718,44 +718,44 @@ Middleware classes:
 
 ```text
 Middleware/
-├── IdentifyApiForgeEndpoint.php
-├── AuthenticateApiForgeKey.php
-├── AuthorizeApiForgeRequest.php
-├── ApplyApiForgePayloadPolicy.php
-├── ThrottleApiForgeKey.php
-├── ProcessApiForgeResponse.php
-└── RecordApiForgeUsage.php
+├── IdentifyAPINEXAEndpoint.php
+├── AuthenticateAPINEXAKey.php
+├── AuthorizeAPINEXARequest.php
+├── ApplyAPINEXAPayloadPolicy.php
+├── ThrottleAPINEXAKey.php
+├── ProcessAPINEXAResponse.php
+└── RecordAPINEXAUsage.php
 ```
 
 Default alias:
 
 ```php
-'apiforge' => [
-    IdentifyApiForgeEndpoint::class,
-    AuthenticateApiForgeKey::class,
-    AuthorizeApiForgeRequest::class,
-    ApplyApiForgePayloadPolicy::class,
-    ThrottleApiForgeKey::class,
-    ProcessApiForgeResponse::class,
-    RecordApiForgeUsage::class,
+'APINEXA' => [
+    IdentifyAPINEXAEndpoint::class,
+    AuthenticateAPINEXAKey::class,
+    AuthorizeAPINEXARequest::class,
+    ApplyAPINEXAPayloadPolicy::class,
+    ThrottleAPINEXAKey::class,
+    ProcessAPINEXAResponse::class,
+    RecordAPINEXAUsage::class,
 ],
 ```
 
 ## 19. Cache Strategy
 
-Redis is preferred for production, but ApiForge must support Laravel cache stores.
+Redis is preferred for production, but APINEXA must support Laravel cache stores.
 
 Cache namespaces:
 
 ```text
-apiforge.schemas
-apiforge.registry
-apiforge.docs
-apiforge.permissions
-apiforge.payload
-apiforge.ai
-apiforge.keys.revoked
-apiforge.analytics
+APINEXA.schemas
+apinexa.registry
+APINEXA.docs
+APINEXA.permissions
+APINEXA.payload
+APINEXA.ai
+apinexa.keys.revoked
+APINEXA.analytics
 ```
 
 Cache invalidation inputs:
@@ -769,7 +769,7 @@ Cache invalidation inputs:
 
 Cache rules:
 
-- Production should use `apiforge:cache`.
+- Production should use `APINEXA:cache`.
 - Local development can use hot reload.
 - Cache entries should be scoped by app environment.
 - Cache keys must be stable and documented.
@@ -781,17 +781,17 @@ Goal: allow third-party extensions without modifying core modules.
 Registration:
 
 ```php
-ApiForge::plugin(new CustomApiForgePlugin());
+APINEXA::plugin(new CustomAPINEXAPlugin());
 ```
 
 Plugin contract:
 
 ```php
-interface ApiForgePlugin
+interface APINEXAPlugin
 {
-    public function register(ApiForgePluginRegistry $registry): void;
+    public function register(APINEXAPluginRegistry $registry): void;
 
-    public function boot(ApiForgePluginRegistry $registry): void;
+    public function boot(APINEXAPluginRegistry $registry): void;
 }
 ```
 
@@ -933,4 +933,5 @@ The architecture is acceptable when:
 - Optional modules can be disabled.
 - Plugins have explicit extension points.
 - Security-sensitive flows are deterministic and testable.
+
 

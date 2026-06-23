@@ -1,8 +1,8 @@
 <?php
 
-namespace ApiForge\Contracts;
+namespace ZMJCoder\ApiNexa\Contracts;
 
-use ApiForge\Support\RegistrySnapshot;
+use ZMJCoder\ApiNexa\Support\RegistrySnapshot;
 
 interface ApiRegistryContract
 {
@@ -10,9 +10,10 @@ interface ApiRegistryContract
 
     public function all(): RegistrySnapshot;
 
-    public function find(string $method, string $uri, ?string $version = null): ?\ApiForge\Support\EndpointDescriptor;
+    public function find(string $method, string $uri, ?string $version = null): ?\APINEXA\Support\EndpointDescriptor;
 
     public function reload(): RegistrySnapshot;
 
     public function invalidate(): void;
 }
+

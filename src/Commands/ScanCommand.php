@@ -1,14 +1,14 @@
 <?php
 
-namespace ApiForge\Commands;
+namespace ZMJCoder\ApiNexa\Commands;
 
-use ApiForge\Contracts\ApiRegistryContract;
-use ApiForge\Exceptions\SchemaValidationException;
+use ZMJCoder\ApiNexa\Contracts\ApiRegistryContract;
+use ZMJCoder\ApiNexa\Exceptions\SchemaValidationException;
 use Illuminate\Console\Command;
 
 class ScanCommand extends Command
 {
-    protected $signature = 'apiforge:scan {--force : Rebuild the registry even if cache is valid}';
+    protected $signature = 'apinexa:scan {--force : Rebuild the registry even if cache is valid}';
 
     protected $description = 'Discover and compile API schemas into the runtime registry';
 
@@ -40,3 +40,4 @@ class ScanCommand extends Command
         return self::SUCCESS;
     }
 }
+

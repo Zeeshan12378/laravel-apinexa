@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiForge\Support;
+namespace ZMJCoder\ApiNexa\Support;
 
 final readonly class RegistrySnapshot
 {
@@ -67,7 +67,7 @@ final readonly class RegistrySnapshot
             $descriptor = EndpointDescriptor::fromSchema(
                 $schema,
                 $sourcePath,
-                (string) ($item['version'] ?? config('apiforge.default_version', 'v1'))
+                (string) ($item['version'] ?? config('apinexa.default_version', 'v1'))
             );
 
             $endpoints[$descriptor->key] = $descriptor;
@@ -81,3 +81,4 @@ final readonly class RegistrySnapshot
         );
     }
 }
+

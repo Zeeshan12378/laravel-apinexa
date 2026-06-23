@@ -1,9 +1,9 @@
 <?php
 
-namespace ApiForge\Documentation;
+namespace ZMJCoder\ApiNexa\Documentation;
 
-use ApiForge\Contracts\DocumentationGeneratorContract;
-use ApiForge\Support\RegistrySnapshot;
+use ZMJCoder\ApiNexa\Contracts\DocumentationGeneratorContract;
+use ZMJCoder\ApiNexa\Support\RegistrySnapshot;
 use Illuminate\Filesystem\Filesystem;
 
 class DocumentationGenerator implements DocumentationGeneratorContract
@@ -16,14 +16,14 @@ class DocumentationGenerator implements DocumentationGeneratorContract
 
     public function generate(RegistrySnapshot $registry): void
     {
-        $outputPath = (string) config('apiforge.documentation.output_path');
+        $outputPath = (string) config('apinexa.documentation.output_path');
 
         if (! $this->files->isDirectory($outputPath)) {
             $this->files->makeDirectory($outputPath, 0755, true);
         }
 
-        $openApiPath = $outputPath.DIRECTORY_SEPARATOR.config('apiforge.documentation.openapi_filename', 'openapi.json');
-        $htmlPath = $outputPath.DIRECTORY_SEPARATOR.config('apiforge.documentation.html_filename', 'index.html');
+        $openApiPath = $outputPath.DIRECTORY_SEPARATOR.config('apinexa.documentation.openapi_filename', 'openapi.json');
+        $htmlPath = $outputPath.DIRECTORY_SEPARATOR.config('apinexa.documentation.html_filename', 'index.html');
 
         $this->files->put(
             $openApiPath,
@@ -43,3 +43,4 @@ class DocumentationGenerator implements DocumentationGeneratorContract
         return $this->htmlGenerator->generate($registry);
     }
 }
+

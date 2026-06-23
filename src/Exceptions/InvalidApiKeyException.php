@@ -1,7 +1,8 @@
 <?php
 
-namespace ApiForge\Exceptions;
+namespace ZMJCoder\ApiNexa\Exceptions;
 
 use RuntimeException;
 
 class InvalidApiKeyException extends RuntimeException {}
+

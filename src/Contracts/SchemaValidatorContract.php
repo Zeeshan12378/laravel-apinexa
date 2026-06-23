@@ -1,8 +1,8 @@
 <?php
 
-namespace ApiForge\Contracts;
+namespace ZMJCoder\ApiNexa\Contracts;
 
-use ApiForge\Support\ValidationResult;
+use ZMJCoder\ApiNexa\Support\ValidationResult;
 
 interface SchemaValidatorContract
 {
@@ -11,3 +11,4 @@ interface SchemaValidatorContract
      */
     public function validate(array $schema, ?string $path = null): ValidationResult;
 }
+

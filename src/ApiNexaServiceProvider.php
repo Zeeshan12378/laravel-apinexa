@@ -1,33 +1,33 @@
 <?php
 
-namespace ApiForge;
+namespace ZMJCoder\ApiNexa;
 
-use ApiForge\Auth\ApiKeyManager;
-use ApiForge\Auth\SignatureValidator;
-use ApiForge\Commands\DocsCommand;
-use ApiForge\Commands\InstallCommand;
-use ApiForge\Commands\ScanCommand;
-use ApiForge\Contracts\ApiKeyManagerContract;
-use ApiForge\Contracts\ApiRegistryContract;
-use ApiForge\Contracts\DocumentationGeneratorContract;
-use ApiForge\Contracts\SchemaLoaderContract;
-use ApiForge\Contracts\SchemaValidatorContract;
-use ApiForge\Contracts\SignatureValidatorContract;
-use ApiForge\Core\ApiRegistry;
-use ApiForge\Core\SchemaLoader;
-use ApiForge\Core\SchemaValidator;
-use ApiForge\Documentation\DocumentationGenerator;
-use ApiForge\Middleware\ApiKeyMiddleware;
+use ZMJCoder\ApiNexa\Auth\ApiKeyManager;
+use ZMJCoder\ApiNexa\Auth\SignatureValidator;
+use ZMJCoder\ApiNexa\Commands\DocsCommand;
+use ZMJCoder\ApiNexa\Commands\InstallCommand;
+use ZMJCoder\ApiNexa\Commands\ScanCommand;
+use ZMJCoder\ApiNexa\Contracts\ApiKeyManagerContract;
+use ZMJCoder\ApiNexa\Contracts\ApiRegistryContract;
+use ZMJCoder\ApiNexa\Contracts\DocumentationGeneratorContract;
+use ZMJCoder\ApiNexa\Contracts\SchemaLoaderContract;
+use ZMJCoder\ApiNexa\Contracts\SchemaValidatorContract;
+use ZMJCoder\ApiNexa\Contracts\SignatureValidatorContract;
+use ZMJCoder\ApiNexa\Core\ApiRegistry;
+use ZMJCoder\ApiNexa\Core\SchemaLoader;
+use ZMJCoder\ApiNexa\Core\SchemaValidator;
+use ZMJCoder\ApiNexa\Documentation\DocumentationGenerator;
+use ZMJCoder\ApiNexa\Middleware\ApiKeyMiddleware;
 use Illuminate\Cache\CacheManager;
 use Illuminate\Contracts\Cache\Repository as CacheRepository;
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 
-class ApiForgeServiceProvider extends ServiceProvider
+class ApiNexaServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/apiforge.php', 'apiforge');
+        $this->mergeConfigFrom(__DIR__.'/../config/apinexa.php', 'APINEXA');
 
         $this->app->singleton(SchemaLoaderContract::class, SchemaLoader::class);
         $this->app->singleton(SchemaValidatorContract::class, SchemaValidator::class);
@@ -40,21 +40,21 @@ class ApiForgeServiceProvider extends ServiceProvider
             ->needs(CacheRepository::class)
             ->give(fn () => $this->resolveCacheStore());
 
-        $this->app->alias(ApiRegistryContract::class, 'apiforge.registry');
+        $this->app->alias(ApiRegistryContract::class, 'apinexa.registry');
     }
 
     protected function resolveCacheStore(): CacheRepository
     {
         /** @var CacheManager $cache */
         $cache = $this->app->make('cache');
-        $store = config('apiforge.cache.store');
+        $store = config('apinexa.cache.store');
 
         return $store ? $cache->store($store) : $cache->store();
     }
 
     public function boot(): void
     {
-        if (! config('apiforge.enabled', true)) {
+        if (! config('apinexa.enabled', true)) {
             return;
         }
 
@@ -68,12 +68,12 @@ class ApiForgeServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../config/apiforge.php' => config_path('apiforge.php'),
-            ], 'apiforge-config');
+                __DIR__.'/../config/apinexa.php' => config_path('apinexa.php'),
+            ], 'apinexa-config');
 
             $this->publishes([
-                __DIR__.'/../stubs/schemas/example.php' => base_path('api-forge/schemas/example.php'),
-            ], 'apiforge-schemas');
+                __DIR__.'/../stubs/schemas/example.php' => base_path('api-nexa/schemas/example.php'),
+            ], 'apinexa-schemas');
         }
     }
 
@@ -94,18 +94,18 @@ class ApiForgeServiceProvider extends ServiceProvider
         $router = $this->app->make(Router::class);
 
         $router->aliasMiddleware(
-            config('apiforge.middleware.alias', 'apiforge.key'),
+            config('apinexa.middleware.alias', 'apinexa.key'),
             ApiKeyMiddleware::class
         );
     }
 
     protected function bootRegistry(): void
     {
-        if (config('apiforge.schemas.hot_reload', false)) {
+        if (config('apinexa.schemas.hot_reload', false)) {
             return;
         }
 
-        if (! config('apiforge.cache.enabled', true)) {
+        if (! config('apinexa.cache.enabled', true)) {
             return;
         }
 
@@ -116,3 +116,4 @@ class ApiForgeServiceProvider extends ServiceProvider
         });
     }
 }
+

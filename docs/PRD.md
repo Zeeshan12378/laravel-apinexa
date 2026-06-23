@@ -1,14 +1,14 @@
-# ApiForge PRD
+# APINEXA PRD
 
 Tagline: Build. Govern. Document. Test.
 
 ## 1. Product Summary
 
-ApiForge is a Git-based, AI-powered API Operating System for Laravel.
+APINEXA is a Git-based, AI-powered API Operating System for Laravel.
 
 It gives Laravel developers a unified platform for API documentation, testing, governance, security, AI-assisted documentation, analytics, API keys, runtime schema registry, and team collaboration.
 
-ApiForge is not a Swagger clone, Postman clone, or API gateway clone. It is a Laravel-native API lifecycle platform where API definitions live in Git, compile into a runtime registry, power documentation and testing, and can be enforced through permissions, payload rules, and signed API keys.
+APINEXA is not a Swagger clone, Postman clone, or API gateway clone. It is a Laravel-native API lifecycle platform where API definitions live in Git, compile into a runtime registry, power documentation and testing, and can be enforced through permissions, payload rules, and signed API keys.
 
 ## 2. Problem Statement
 
@@ -26,16 +26,16 @@ Developers spend too much time:
 - Tracking API usage and failures.
 - Keeping docs, code, validation rules, and runtime behavior aligned.
 
-ApiForge solves this by making API definitions file-first, runtime-aware, AI-enhanced, and enforceable inside Laravel.
+APINEXA solves this by making API definitions file-first, runtime-aware, AI-enhanced, and enforceable inside Laravel.
 
 ## 3. Vision
 
-ApiForge should become the default API management platform for Laravel.
+APINEXA should become the default API management platform for Laravel.
 
 A developer should be able to run:
 
 ```bash
-php artisan apiforge:install
+php artisan apinexa:install
 ```
 
 and immediately gain:
@@ -74,7 +74,7 @@ and immediately gain:
 
 ## 5. Non-Goals
 
-ApiForge will not:
+APINEXA will not:
 
 - Replace Laravel routing.
 - Replace Laravel authentication.
@@ -86,7 +86,7 @@ ApiForge will not:
 
 ## 6. Core Philosophy
 
-ApiForge is:
+APINEXA is:
 
 - File-first.
 - Git-friendly.
@@ -97,7 +97,7 @@ ApiForge is:
 - Extensible.
 - Secure by default.
 
-ApiForge is not database-driven. Files are the source of truth. The database is used only for optional analytics, logs, metrics, API key audit records, and personal testing history.
+APINEXA is not database-driven. Files are the source of truth. The database is used only for optional analytics, logs, metrics, API key audit records, and personal testing history.
 
 ## 7. Target Users
 
@@ -119,14 +119,14 @@ SaaS products that expose public or partner APIs and need API keys, scopes, docs
 
 ## 8. Product Positioning
 
-ApiForge is not:
+APINEXA is not:
 
 - Swagger.
 - Postman.
 - A generic API gateway.
 - A static docs generator.
 
-ApiForge is:
+APINEXA is:
 
 > The API Operating System for Laravel.
 
@@ -139,7 +139,7 @@ Files stored in Git.
 Recommended default structure:
 
 ```text
-api-forge/
+api-nexa/
 ├── schemas/
 ├── permissions/
 ├── collections/
@@ -385,26 +385,26 @@ Filament should be the default admin interface, while the package core remains u
 Required commands:
 
 ```bash
-php artisan apiforge:install
-php artisan apiforge:scan
-php artisan apiforge:docs
-php artisan apiforge:test
-php artisan apiforge:key:create
-php artisan apiforge:key:revoke
-php artisan apiforge:cache
-php artisan apiforge:clear
+php artisan apinexa:install
+php artisan apinexa:scan
+php artisan apinexa:docs
+php artisan apinexa:test
+php artisan apinexa:key:create
+php artisan apinexa:key:revoke
+php artisan apinexa:cache
+php artisan apinexa:clear
 ```
 
 Command expectations:
 
-- `apiforge:install` publishes config, stubs, migrations, prompts, and optional Filament resources.
-- `apiforge:scan` inspects routes, controllers, form requests, and resources.
-- `apiforge:docs` generates documentation exports.
-- `apiforge:test` runs generated or selected API tests.
-- `apiforge:key:create` creates signed API keys.
-- `apiforge:key:revoke` revokes API keys through cache or optional database records.
-- `apiforge:cache` compiles the runtime registry.
-- `apiforge:clear` clears registry, docs, AI, and analytics caches.
+- `APINEXA:install` publishes config, stubs, migrations, prompts, and optional Filament resources.
+- `APINEXA:scan` inspects routes, controllers, form requests, and resources.
+- `APINEXA:docs` generates documentation exports.
+- `APINEXA:test` runs generated or selected API tests.
+- `APINEXA:key:create` creates signed API keys.
+- `APINEXA:key:revoke` revokes API keys through cache or optional database records.
+- `APINEXA:cache` compiles the runtime registry.
+- `APINEXA:clear` clears registry, docs, AI, and analytics caches.
 
 ## 12. MVP Scope: Version 1
 
@@ -459,7 +459,7 @@ SaaS Platform support, multi-project workspaces, hosted docs portals, and advanc
 
 ## 14. Functional Requirements
 
-- Users can install ApiForge with one Artisan command.
+- Users can install APINEXA with one Artisan command.
 - Users can define API schemas in Git-tracked files.
 - Users can compile schemas into a runtime registry.
 - Users can generate API documentation from schemas and Laravel runtime metadata.
@@ -488,7 +488,7 @@ SaaS Platform support, multi-project workspaces, hosted docs portals, and advanc
 
 ## 16. Security Requirements
 
-ApiForge must address:
+APINEXA must address:
 
 - API key signing.
 - API key leakage.
@@ -570,4 +570,5 @@ This PRD is complete when it defines:
 - Security requirements.
 - Success metrics.
 - Open-source and future Pro positioning.
+
 

@@ -1,4 +1,4 @@
-# ApiForge
+# APINEXA
 
 File-first API schema engine for Laravel. Define APIs in PHP, compile a runtime registry, generate OpenAPI + HTML docs, and protect endpoints with stateless signed API keys.
 
@@ -10,13 +10,13 @@ File-first API schema engine for Laravel. Define APIs in PHP, compile a runtime 
 ## Installation
 
 ```bash
-composer require apiforge/apiforge
-php artisan apiforge:install
+composer require zmjcoder/apinexa
+php artisan apinexa:install
 ```
 
 ## Quick Start
 
-1. Add a schema file in `api-forge/schemas/`:
+1. Add a schema file in `api-nexa/schemas/`:
 
 ```php
 <?php
@@ -38,23 +38,23 @@ return [
 2. Compile schemas:
 
 ```bash
-php artisan apiforge:scan
+php artisan apinexa:scan
 ```
 
 3. Generate documentation:
 
 ```bash
-php artisan apiforge:docs
+php artisan apinexa:docs
 ```
 
-4. Open `api-forge/docs/index.html` in your browser.
+4. Open `api-nexa/docs/index.html` in your browser.
 
 ## Middleware
 
 Register the API key middleware on your API routes:
 
 ```php
-Route::middleware(['api', 'apiforge.key'])->group(base_path('routes/api.php'));
+Route::middleware(['api', 'apinexa.key'])->group(base_path('routes/api.php'));
 ```
 
 Protected schemas (`auth => true`) require a valid `X-Api-Key` header.
@@ -64,7 +64,7 @@ Protected schemas (`auth => true`) require a valid `X-Api-Key` header.
 Create signed keys programmatically:
 
 ```php
-use ApiForge\Contracts\ApiKeyManagerContract;
+use ZMJCoder\ApiNexa\Contracts\ApiKeyManagerContract;
 
 $key = app(ApiKeyManagerContract::class)->create(
     name: 'Partner Integration',
@@ -78,16 +78,17 @@ Keys are verified without a database lookup. Revocation is cache-backed.
 
 ## Configuration
 
-Publish and edit `config/apiforge.php` to customize schema paths, cache store, documentation output, and signing key (`APIFORGE_SIGNING_KEY`).
+Publish and edit `config/apinexa.php` to customize schema paths, cache store, documentation output, and signing key (`APINEXA_SIGNING_KEY`).
 
 ## Commands
 
 | Command | Description |
 |---------|-------------|
-| `apiforge:install` | Publish config and scaffold directories |
-| `apiforge:scan` | Load and cache schemas into the registry |
-| `apiforge:docs` | Generate `openapi.json` and `index.html` |
+| `APINEXA:install` | Publish config and scaffold directories |
+| `APINEXA:scan` | Load and cache schemas into the registry |
+| `APINEXA:docs` | Generate `openapi.json` and `index.html` |
 
 ## License
 
 MIT
+

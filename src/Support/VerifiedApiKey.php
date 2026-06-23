@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiForge\Support;
+namespace ZMJCoder\ApiNexa\Support;
 
 final readonly class VerifiedApiKey
 {
@@ -29,3 +29,4 @@ final readonly class VerifiedApiKey
         return in_array($permission, $this->permissions, true) || in_array('*', $this->permissions, true);
     }
 }
+

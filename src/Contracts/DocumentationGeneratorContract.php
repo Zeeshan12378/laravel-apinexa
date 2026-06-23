@@ -1,8 +1,8 @@
 <?php
 
-namespace ApiForge\Contracts;
+namespace ZMJCoder\ApiNexa\Contracts;
 
-use ApiForge\Support\RegistrySnapshot;
+use ZMJCoder\ApiNexa\Support\RegistrySnapshot;
 
 interface DocumentationGeneratorContract
 {
@@ -15,3 +15,4 @@ interface DocumentationGeneratorContract
 
     public function toHtml(RegistrySnapshot $registry): string;
 }
+

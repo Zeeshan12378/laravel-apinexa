@@ -1,15 +1,15 @@
 <?php
 
-namespace ApiForge\Commands;
+namespace ZMJCoder\ApiNexa\Commands;
 
-use ApiForge\Contracts\ApiRegistryContract;
-use ApiForge\Contracts\DocumentationGeneratorContract;
-use ApiForge\Exceptions\SchemaValidationException;
+use ZMJCoder\ApiNexa\Contracts\ApiRegistryContract;
+use ZMJCoder\ApiNexa\Contracts\DocumentationGeneratorContract;
+use ZMJCoder\ApiNexa\Exceptions\SchemaValidationException;
 use Illuminate\Console\Command;
 
 class DocsCommand extends Command
 {
-    protected $signature = 'apiforge:docs';
+    protected $signature = 'apinexa:docs';
 
     protected $description = 'Generate OpenAPI and HTML documentation from the registry';
 
@@ -30,16 +30,16 @@ class DocsCommand extends Command
         }
 
         if ($snapshot->count() === 0) {
-            $this->components->warn('No endpoints found. Run apiforge:scan after adding schemas.');
+            $this->components->warn('No endpoints found. Run APINEXA:scan after adding schemas.');
 
             return self::FAILURE;
         }
 
         $documentation->generate($snapshot);
 
-        $outputPath = (string) config('apiforge.documentation.output_path');
-        $openApi = config('apiforge.documentation.openapi_filename', 'openapi.json');
-        $html = config('apiforge.documentation.html_filename', 'index.html');
+        $outputPath = (string) config('apinexa.documentation.output_path');
+        $openApi = config('apinexa.documentation.openapi_filename', 'openapi.json');
+        $html = config('apinexa.documentation.html_filename', 'index.html');
 
         $this->components->info('Documentation generated.');
         $this->line("  OpenAPI: {$outputPath}/{$openApi}");
@@ -48,3 +48,4 @@ class DocsCommand extends Command
         return self::SUCCESS;
     }
 }
+

@@ -1,11 +1,11 @@
 <?php
 
-namespace ApiForge\Tests\Unit;
+namespace ZMJCoder\ApiNexa\Tests\Unit;
 
-use ApiForge\Auth\ApiKeyManager;
-use ApiForge\Auth\SignatureValidator;
-use ApiForge\Exceptions\InvalidApiKeyException;
-use ApiForge\Tests\TestCase;
+use ZMJCoder\ApiNexa\Auth\ApiKeyManager;
+use ZMJCoder\ApiNexa\Auth\SignatureValidator;
+use ZMJCoder\ApiNexa\Exceptions\InvalidApiKeyException;
+use ZMJCoder\ApiNexa\Tests\TestCase;
 
 class ApiKeyTest extends TestCase
 {
@@ -41,3 +41,4 @@ class ApiKeyTest extends TestCase
         $validator->verify($signed->key);
     }
 }
+

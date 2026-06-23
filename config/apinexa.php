@@ -4,11 +4,11 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | ApiForge Enabled
+    | APINEXA Enabled
     |--------------------------------------------------------------------------
     */
 
-    'enabled' => env('APIFORGE_ENABLED', true),
+    'enabled' => env('APINEXA_ENABLED', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -21,10 +21,10 @@ return [
 
     'schemas' => [
         'paths' => [
-            base_path('api-forge/schemas'),
+            base_path('api-nexa/schemas'),
         ],
         'pattern' => '*.php',
-        'hot_reload' => env('APIFORGE_HOT_RELOAD', env('APP_ENV') === 'local'),
+        'hot_reload' => env('APINEXA_HOT_RELOAD', env('APP_ENV') === 'local'),
     ],
 
     /*
@@ -33,7 +33,7 @@ return [
     |--------------------------------------------------------------------------
     */
 
-    'default_version' => env('APIFORGE_DEFAULT_VERSION', 'v1'),
+    'default_version' => env('APINEXA_DEFAULT_VERSION', 'v1'),
 
     /*
     |--------------------------------------------------------------------------
@@ -42,10 +42,10 @@ return [
     */
 
     'cache' => [
-        'enabled' => env('APIFORGE_CACHE_ENABLED', true),
-        'store' => env('APIFORGE_CACHE_STORE'),
-        'prefix' => env('APIFORGE_CACHE_PREFIX', 'apiforge'),
-        'ttl' => env('APIFORGE_CACHE_TTL', 86400),
+        'enabled' => env('APINEXA_CACHE_ENABLED', true),
+        'store' => env('APINEXA_CACHE_STORE'),
+        'prefix' => env('APINEXA_CACHE_PREFIX', 'APINEXA'),
+        'ttl' => env('APINEXA_CACHE_TTL', 86400),
         'registry_key' => 'registry',
     ],
 
@@ -56,11 +56,11 @@ return [
     */
 
     'documentation' => [
-        'output_path' => base_path('api-forge/docs'),
+        'output_path' => base_path('api-nexa/docs'),
         'openapi_filename' => 'openapi.json',
         'html_filename' => 'index.html',
-        'title' => env('APIFORGE_DOCS_TITLE', 'API Documentation'),
-        'version' => env('APIFORGE_DOCS_VERSION', '1.0.0'),
+        'title' => env('APINEXA_DOCS_TITLE', 'API Documentation'),
+        'version' => env('APINEXA_DOCS_VERSION', '1.0.0'),
     ],
 
     /*
@@ -73,9 +73,9 @@ return [
     */
 
     'keys' => [
-        'signing_key' => env('APIFORGE_SIGNING_KEY'),
-        'default_ttl_days' => (int) env('APIFORGE_KEY_TTL_DAYS', 90),
-        'header' => env('APIFORGE_KEY_HEADER', 'X-Api-Key'),
+        'signing_key' => env('APINEXA_SIGNING_KEY'),
+        'default_ttl_days' => (int) env('APINEXA_KEY_TTL_DAYS', 90),
+        'header' => env('APINEXA_KEY_HEADER', 'X-Api-Key'),
         'revocation_prefix' => 'keys.revoked',
     ],
 
@@ -86,7 +86,8 @@ return [
     */
 
     'middleware' => [
-        'alias' => 'apiforge.key',
+        'alias' => 'apinexa.key',
     ],
 
 ];
+

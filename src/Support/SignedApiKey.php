@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiForge\Support;
+namespace ZMJCoder\ApiNexa\Support;
 
 final readonly class SignedApiKey
 {
@@ -18,3 +18,4 @@ final readonly class SignedApiKey
         public int $expiresAt,
     ) {}
 }
+
