@@ -1,6 +1,6 @@
 <?php
 
-namespace ZMJCoder\ApiNexa\Contracts;
+namespace ZeeshanMushtaq\ApiNexa\Contracts;
 
 interface SchemaLoaderContract
 {

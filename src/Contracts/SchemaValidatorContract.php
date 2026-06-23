@@ -1,8 +1,8 @@
 <?php
 
-namespace ZMJCoder\ApiNexa\Contracts;
+namespace ZeeshanMushtaq\ApiNexa\Contracts;
 
-use ZMJCoder\ApiNexa\Support\ValidationResult;
+use ZeeshanMushtaq\ApiNexa\Support\ValidationResult;
 
 interface SchemaValidatorContract
 {

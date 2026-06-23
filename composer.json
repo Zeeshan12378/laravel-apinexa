@@ -1,5 +1,5 @@
 {
-    "name": "zmjcoder/apinexa",
+    "name": "zeeshanmushtq/apinexa",
     "version": "1.0.0",
     "description": "File-first API schema engine for Laravel — registry, docs, and signed API keys.",
     "keywords": [
@@ -33,21 +33,21 @@
     },
     "autoload": {
         "psr-4": {
-            "ZMJCoder\\APINEXA\\": "src/"
+            "ZeeshanMushtaq\\APINEXA\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "ZMJCoder\\APINEXA\\Tests\\": "tests/"
+            "ZeeshanMushtaq\\APINEXA\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "ZMJCoder\\APINEXA\\APINEXAServiceProvider"
+                "ZeeshanMushtaq\\APINEXA\\APINEXAServiceProvider"
             ],
             "aliases": {
-                "APINEXA": "ZMJCoder\\APINEXA\\Facades\\APINEXA"
+                "APINEXA": "ZeeshanMushtaq\\APINEXA\\Facades\\APINEXA"
             }
         }
     },

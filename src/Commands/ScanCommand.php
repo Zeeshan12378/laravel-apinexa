@@ -1,9 +1,9 @@
 <?php
 
-namespace ZMJCoder\ApiNexa\Commands;
+namespace ZeeshanMushtaq\ApiNexa\Commands;
 
-use ZMJCoder\ApiNexa\Contracts\ApiRegistryContract;
-use ZMJCoder\ApiNexa\Exceptions\SchemaValidationException;
+use ZeeshanMushtaq\ApiNexa\Contracts\ApiRegistryContract;
+use ZeeshanMushtaq\ApiNexa\Exceptions\SchemaValidationException;
 use Illuminate\Console\Command;
 
 class ScanCommand extends Command

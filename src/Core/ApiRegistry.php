@@ -1,14 +1,14 @@
 <?php
 
-namespace ZMJCoder\ApiNexa\Core;
+namespace ZeeshanMushtaq\ApiNexa\Core;
 
-use ZMJCoder\ApiNexa\Contracts\ApiRegistryContract;
-use ZMJCoder\ApiNexa\Contracts\SchemaLoaderContract;
-use ZMJCoder\ApiNexa\Contracts\SchemaValidatorContract;
-use ZMJCoder\ApiNexa\Exceptions\SchemaValidationException;
-use ZMJCoder\ApiNexa\Support\ConfigHash;
-use ZMJCoder\ApiNexa\Support\EndpointDescriptor;
-use ZMJCoder\ApiNexa\Support\RegistrySnapshot;
+use ZeeshanMushtaq\ApiNexa\Contracts\ApiRegistryContract;
+use ZeeshanMushtaq\ApiNexa\Contracts\SchemaLoaderContract;
+use ZeeshanMushtaq\ApiNexa\Contracts\SchemaValidatorContract;
+use ZeeshanMushtaq\ApiNexa\Exceptions\SchemaValidationException;
+use ZeeshanMushtaq\ApiNexa\Support\ConfigHash;
+use ZeeshanMushtaq\ApiNexa\Support\EndpointDescriptor;
+use ZeeshanMushtaq\ApiNexa\Support\RegistrySnapshot;
 use Illuminate\Contracts\Cache\Repository as CacheRepository;
 use Illuminate\Filesystem\Filesystem;
 

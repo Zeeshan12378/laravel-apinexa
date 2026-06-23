@@ -1,8 +1,8 @@
 <?php
 
-namespace ZMJCoder\ApiNexa\Facades;
+namespace ZeeshanMushtaq\ApiNexa\Facades;
 
-use ZMJCoder\ApiNexa\Support\RegistrySnapshot;
+use ZeeshanMushtaq\ApiNexa\Support\RegistrySnapshot;
 use Illuminate\Support\Facades\Facade;
 
 /**

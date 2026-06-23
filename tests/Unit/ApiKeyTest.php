@@ -1,11 +1,11 @@
 <?php
 
-namespace ZMJCoder\ApiNexa\Tests\Unit;
+namespace ZeeshanMushtaq\ApiNexa\Tests\Unit;
 
-use ZMJCoder\ApiNexa\Auth\ApiKeyManager;
-use ZMJCoder\ApiNexa\Auth\SignatureValidator;
-use ZMJCoder\ApiNexa\Exceptions\InvalidApiKeyException;
-use ZMJCoder\ApiNexa\Tests\TestCase;
+use ZeeshanMushtaq\ApiNexa\Auth\ApiKeyManager;
+use ZeeshanMushtaq\ApiNexa\Auth\SignatureValidator;
+use ZeeshanMushtaq\ApiNexa\Exceptions\InvalidApiKeyException;
+use ZeeshanMushtaq\ApiNexa\Tests\TestCase;
 
 class ApiKeyTest extends TestCase
 {

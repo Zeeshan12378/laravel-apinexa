@@ -1,11 +1,11 @@
 <?php
 
-namespace ZMJCoder\ApiNexa\Middleware;
+namespace ZeeshanMushtaq\ApiNexa\Middleware;
 
-use ZMJCoder\ApiNexa\Contracts\ApiRegistryContract;
-use ZMJCoder\ApiNexa\Contracts\SignatureValidatorContract;
-use ZMJCoder\ApiNexa\Exceptions\InvalidApiKeyException;
-use ZMJCoder\ApiNexa\Support\EndpointDescriptor;
+use ZeeshanMushtaq\ApiNexa\Contracts\ApiRegistryContract;
+use ZeeshanMushtaq\ApiNexa\Contracts\SignatureValidatorContract;
+use ZeeshanMushtaq\ApiNexa\Exceptions\InvalidApiKeyException;
+use ZeeshanMushtaq\ApiNexa\Support\EndpointDescriptor;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

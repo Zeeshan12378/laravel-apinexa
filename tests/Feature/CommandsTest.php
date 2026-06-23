@@ -1,10 +1,10 @@
 <?php
 
-namespace ZMJCoder\ApiNexa\Tests\Feature;
+namespace ZeeshanMushtaq\ApiNexa\Tests\Feature;
 
-use ZMJCoder\ApiNexa\Contracts\ApiRegistryContract;
-use ZMJCoder\ApiNexa\Contracts\DocumentationGeneratorContract;
-use ZMJCoder\ApiNexa\Tests\TestCase;
+use ZeeshanMushtaq\ApiNexa\Contracts\ApiRegistryContract;
+use ZeeshanMushtaq\ApiNexa\Contracts\DocumentationGeneratorContract;
+use ZeeshanMushtaq\ApiNexa\Tests\TestCase;
 use Illuminate\Support\Facades\Artisan;
 
 class CommandsTest extends TestCase

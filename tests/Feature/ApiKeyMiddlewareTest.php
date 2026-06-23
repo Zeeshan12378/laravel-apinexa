@@ -1,11 +1,11 @@
 <?php
 
-namespace ZMJCoder\ApiNexa\Tests\Feature;
+namespace ZeeshanMushtaq\ApiNexa\Tests\Feature;
 
-use ZMJCoder\ApiNexa\Auth\ApiKeyManager;
-use ZMJCoder\ApiNexa\Contracts\ApiRegistryContract;
-use ZMJCoder\ApiNexa\Middleware\ApiKeyMiddleware;
-use ZMJCoder\ApiNexa\Tests\TestCase;
+use ZeeshanMushtaq\ApiNexa\Auth\ApiKeyManager;
+use ZeeshanMushtaq\ApiNexa\Contracts\ApiRegistryContract;
+use ZeeshanMushtaq\ApiNexa\Middleware\ApiKeyMiddleware;
+use ZeeshanMushtaq\ApiNexa\Tests\TestCase;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 

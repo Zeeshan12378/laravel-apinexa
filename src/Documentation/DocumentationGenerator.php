@@ -1,9 +1,9 @@
 <?php
 
-namespace ZMJCoder\ApiNexa\Documentation;
+namespace ZeeshanMushtaq\ApiNexa\Documentation;
 
-use ZMJCoder\ApiNexa\Contracts\DocumentationGeneratorContract;
-use ZMJCoder\ApiNexa\Support\RegistrySnapshot;
+use ZeeshanMushtaq\ApiNexa\Contracts\DocumentationGeneratorContract;
+use ZeeshanMushtaq\ApiNexa\Support\RegistrySnapshot;
 use Illuminate\Filesystem\Filesystem;
 
 class DocumentationGenerator implements DocumentationGeneratorContract

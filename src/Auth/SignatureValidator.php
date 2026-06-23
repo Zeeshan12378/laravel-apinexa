@@ -1,10 +1,10 @@
 <?php
 
-namespace ZMJCoder\ApiNexa\Auth;
+namespace ZeeshanMushtaq\ApiNexa\Auth;
 
-use ZMJCoder\ApiNexa\Contracts\SignatureValidatorContract;
-use ZMJCoder\ApiNexa\Exceptions\InvalidApiKeyException;
-use ZMJCoder\ApiNexa\Support\VerifiedApiKey;
+use ZeeshanMushtaq\ApiNexa\Contracts\SignatureValidatorContract;
+use ZeeshanMushtaq\ApiNexa\Exceptions\InvalidApiKeyException;
+use ZeeshanMushtaq\ApiNexa\Support\VerifiedApiKey;
 use Illuminate\Contracts\Cache\Repository as CacheRepository;
 
 class SignatureValidator implements SignatureValidatorContract

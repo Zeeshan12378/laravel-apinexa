@@ -1,9 +1,9 @@
 <?php
 
-namespace ZMJCoder\ApiNexa\Documentation;
+namespace ZeeshanMushtaq\ApiNexa\Documentation;
 
-use ZMJCoder\ApiNexa\Support\EndpointDescriptor;
-use ZMJCoder\ApiNexa\Support\RegistrySnapshot;
+use ZeeshanMushtaq\ApiNexa\Support\EndpointDescriptor;
+use ZeeshanMushtaq\ApiNexa\Support\RegistrySnapshot;
 
 class HtmlGenerator
 {

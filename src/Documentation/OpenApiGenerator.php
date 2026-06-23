@@ -1,10 +1,10 @@
 <?php
 
-namespace ZMJCoder\ApiNexa\Documentation;
+namespace ZeeshanMushtaq\ApiNexa\Documentation;
 
-use ZMJCoder\ApiNexa\Support\EndpointDescriptor;
-use ZMJCoder\ApiNexa\Support\RegistrySnapshot;
-use ZMJCoder\ApiNexa\Support\ValidationRuleParser;
+use ZeeshanMushtaq\ApiNexa\Support\EndpointDescriptor;
+use ZeeshanMushtaq\ApiNexa\Support\RegistrySnapshot;
+use ZeeshanMushtaq\ApiNexa\Support\ValidationRuleParser;
 
 class OpenApiGenerator
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace ZMJCoder\ApiNexa\Exceptions;
+namespace ZeeshanMushtaq\ApiNexa\Exceptions;
 
 use RuntimeException;
 

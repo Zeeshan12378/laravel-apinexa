@@ -1,8 +1,8 @@
 <?php
 
-namespace ZMJCoder\ApiNexa\Tests;
+namespace ZeeshanMushtaq\ApiNexa\Tests;
 
-use ZMJCoder\ApiNexa\APINEXAServiceProvider;
+use ZeeshanMushtaq\ApiNexa\APINEXAServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 abstract class TestCase extends Orchestra

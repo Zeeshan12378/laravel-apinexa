@@ -1,6 +1,6 @@
 <?php
 
-namespace ZMJCoder\ApiNexa\Commands;
+namespace ZeeshanMushtaq\ApiNexa\Commands;
 
 use Illuminate\Console\Command;
 

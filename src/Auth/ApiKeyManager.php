@@ -1,10 +1,10 @@
 <?php
 
-namespace ZMJCoder\ApiNexa\Auth;
+namespace ZeeshanMushtaq\ApiNexa\Auth;
 
-use ZMJCoder\ApiNexa\Contracts\ApiKeyManagerContract;
-use ZMJCoder\ApiNexa\Contracts\SignatureValidatorContract;
-use ZMJCoder\ApiNexa\Support\SignedApiKey;
+use ZeeshanMushtaq\ApiNexa\Contracts\ApiKeyManagerContract;
+use ZeeshanMushtaq\ApiNexa\Contracts\SignatureValidatorContract;
+use ZeeshanMushtaq\ApiNexa\Support\SignedApiKey;
 use Illuminate\Contracts\Cache\Repository as CacheRepository;
 use Illuminate\Support\Str;
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace ZMJCoder\ApiNexa\Core;
+namespace ZeeshanMushtaq\ApiNexa\Core;
 
-use ZMJCoder\ApiNexa\Contracts\SchemaValidatorContract;
-use ZMJCoder\ApiNexa\Support\ValidationResult;
+use ZeeshanMushtaq\ApiNexa\Contracts\SchemaValidatorContract;
+use ZeeshanMushtaq\ApiNexa\Support\ValidationResult;
 
 class SchemaValidator implements SchemaValidatorContract
 {

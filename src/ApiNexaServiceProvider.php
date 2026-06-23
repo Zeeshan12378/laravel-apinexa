@@ -1,23 +1,23 @@
 <?php
 
-namespace ZMJCoder\ApiNexa;
+namespace ZeeshanMushtaq\ApiNexa;
 
-use ZMJCoder\ApiNexa\Auth\ApiKeyManager;
-use ZMJCoder\ApiNexa\Auth\SignatureValidator;
-use ZMJCoder\ApiNexa\Commands\DocsCommand;
-use ZMJCoder\ApiNexa\Commands\InstallCommand;
-use ZMJCoder\ApiNexa\Commands\ScanCommand;
-use ZMJCoder\ApiNexa\Contracts\ApiKeyManagerContract;
-use ZMJCoder\ApiNexa\Contracts\ApiRegistryContract;
-use ZMJCoder\ApiNexa\Contracts\DocumentationGeneratorContract;
-use ZMJCoder\ApiNexa\Contracts\SchemaLoaderContract;
-use ZMJCoder\ApiNexa\Contracts\SchemaValidatorContract;
-use ZMJCoder\ApiNexa\Contracts\SignatureValidatorContract;
-use ZMJCoder\ApiNexa\Core\ApiRegistry;
-use ZMJCoder\ApiNexa\Core\SchemaLoader;
-use ZMJCoder\ApiNexa\Core\SchemaValidator;
-use ZMJCoder\ApiNexa\Documentation\DocumentationGenerator;
-use ZMJCoder\ApiNexa\Middleware\ApiKeyMiddleware;
+use ZeeshanMushtaq\ApiNexa\Auth\ApiKeyManager;
+use ZeeshanMushtaq\ApiNexa\Auth\SignatureValidator;
+use ZeeshanMushtaq\ApiNexa\Commands\DocsCommand;
+use ZeeshanMushtaq\ApiNexa\Commands\InstallCommand;
+use ZeeshanMushtaq\ApiNexa\Commands\ScanCommand;
+use ZeeshanMushtaq\ApiNexa\Contracts\ApiKeyManagerContract;
+use ZeeshanMushtaq\ApiNexa\Contracts\ApiRegistryContract;
+use ZeeshanMushtaq\ApiNexa\Contracts\DocumentationGeneratorContract;
+use ZeeshanMushtaq\ApiNexa\Contracts\SchemaLoaderContract;
+use ZeeshanMushtaq\ApiNexa\Contracts\SchemaValidatorContract;
+use ZeeshanMushtaq\ApiNexa\Contracts\SignatureValidatorContract;
+use ZeeshanMushtaq\ApiNexa\Core\ApiRegistry;
+use ZeeshanMushtaq\ApiNexa\Core\SchemaLoader;
+use ZeeshanMushtaq\ApiNexa\Core\SchemaValidator;
+use ZeeshanMushtaq\ApiNexa\Documentation\DocumentationGenerator;
+use ZeeshanMushtaq\ApiNexa\Middleware\ApiKeyMiddleware;
 use Illuminate\Cache\CacheManager;
 use Illuminate\Contracts\Cache\Repository as CacheRepository;
 use Illuminate\Routing\Router;

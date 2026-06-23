@@ -5,9 +5,9 @@ root = Path('E:/ApiForge')
 file_exts = {'.php', '.json', '.md'}
 replacements = [
     # namespace and class changes
-    (re.compile(r'\bnamespace\s+APINEXA\b'), r'namespace ZMJCoder\\ApiNexa'),
-    (re.compile(r'\bnamespace\s+APINEXA\\'), r'namespace ZMJCoder\\ApiNexa\\'),
-    (re.compile(r'\buse\s+APINEXA\\'), r'use ZMJCoder\\ApiNexa\\'),
+    (re.compile(r'\bnamespace\s+APINEXA\b'), r'namespace ZeeshanMushtaq\\ApiNexa'),
+    (re.compile(r'\bnamespace\s+APINEXA\\'), r'namespace ZeeshanMushtaq\\ApiNexa\\'),
+    (re.compile(r'\buse\s+APINEXA\\'), r'use ZeeshanMushtaq\\ApiNexa\\'),
     (re.compile(r'\bclass\s+APINEXAServiceProvider\b'), 'class ApiNexaServiceProvider'),
     (re.compile(r'\bclass\s+APINEXA\b'), 'class ApiNexa'),
     # facade accessor
@@ -41,8 +41,8 @@ replacements = [
     (re.compile(r"protected\s+\$signature\s*=\s*'APINEXA:(.*?)'"), r"protected $signature = 'apinexa:\1'"),
     (re.compile(r'protected\s+\$signature\s*=\s*"APINEXA:(.*?)"'), r'protected $signature = "apinexa:\1"'),
     # README/docs package and config file references
-    (re.compile(r'composer require\s+zmjcoder/APINEXA'), 'composer require zmjcoder/apinexa'),
-    (re.compile(r'composer require\s+APINEXA/APINEXA'), 'composer require zmjcoder/apinexa'),
+    (re.compile(r'composer require\s+zeeshanmushtq/APINEXA'), 'composer require zeeshanmushtq/apinexa'),
+    (re.compile(r'composer require\s+APINEXA/APINEXA'), 'composer require zeeshanmushtq/apinexa'),
     (re.compile(r'config/APINEXA\.php'), 'config/apinexa.php'),
     (re.compile(r'php artisan APINEXA:'), 'php artisan apinexa:'),
 ]
@@ -61,11 +61,11 @@ composer_path = root / 'composer.json'
 if composer_path.exists():
     text = composer_path.read_text(encoding='utf-8')
     new_text = text
-    new_text = re.sub(r'"name"\s*:\s*"zmjcoder/APINEXA"', '"name": "zmjcoder/apinexa"', new_text)
-    new_text = re.sub(r'"ZMJCoder\\APINEXA\\"', r'"ZMJCoder\\ApiNexa\\"', new_text)
-    new_text = re.sub(r'"ZMJCoder\\APINEXA\\Tests\\"', r'"ZMJCoder\\ApiNexa\\Tests\\"', new_text)
-    new_text = re.sub(r'"ZMJCoder\\APINEXA\\APINEXAServiceProvider"', r'"ZMJCoder\\ApiNexa\\ApiNexaServiceProvider"', new_text)
-    new_text = re.sub(r'"APINEXA"\s*:\s*"ZMJCoder\\APINEXA\\Facades\\APINEXA"', r'"ApiNexa": "ZMJCoder\\ApiNexa\\Facades\\ApiNexa"', new_text)
+    new_text = re.sub(r'"name"\s*:\s*"zeeshanmushtq/APINEXA"', '"name": "zeeshanmushtq/apinexa"', new_text)
+    new_text = re.sub(r'"ZeeshanMushtaq\\APINEXA\\"', r'"ZeeshanMushtaq\\ApiNexa\\"', new_text)
+    new_text = re.sub(r'"ZeeshanMushtaq\\APINEXA\\Tests\\"', r'"ZeeshanMushtaq\\ApiNexa\\Tests\\"', new_text)
+    new_text = re.sub(r'"ZeeshanMushtaq\\APINEXA\\APINEXAServiceProvider"', r'"ZeeshanMushtaq\\ApiNexa\\ApiNexaServiceProvider"', new_text)
+    new_text = re.sub(r'"APINEXA"\s*:\s*"ZeeshanMushtaq\\APINEXA\\Facades\\APINEXA"', r'"ApiNexa": "ZeeshanMushtaq\\ApiNexa\\Facades\\ApiNexa"', new_text)
     if new_text != text:
         composer_path.write_text(new_text, encoding='utf-8')
         print('Updated: composer.json')

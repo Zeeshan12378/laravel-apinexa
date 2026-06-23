@@ -10,7 +10,7 @@ File-first API schema engine for Laravel. Define APIs in PHP, compile a runtime 
 ## Installation
 
 ```bash
-composer require zmjcoder/apinexa
+composer require zeeshanmushtq/apinexa
 php artisan apinexa:install
 ```
 
@@ -64,7 +64,7 @@ Protected schemas (`auth => true`) require a valid `X-Api-Key` header.
 Create signed keys programmatically:
 
 ```php
-use ZMJCoder\ApiNexa\Contracts\ApiKeyManagerContract;
+use ZeeshanMushtaq\ApiNexa\Contracts\ApiKeyManagerContract;
 
 $key = app(ApiKeyManagerContract::class)->create(
     name: 'Partner Integration',

@@ -1,8 +1,8 @@
 <?php
 
-namespace ZMJCoder\ApiNexa\Core;
+namespace ZeeshanMushtaq\ApiNexa\Core;
 
-use ZMJCoder\ApiNexa\Contracts\SchemaLoaderContract;
+use ZeeshanMushtaq\ApiNexa\Contracts\SchemaLoaderContract;
 use Illuminate\Filesystem\Filesystem;
 
 class SchemaLoader implements SchemaLoaderContract

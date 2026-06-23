@@ -1,6 +1,6 @@
 <?php
 
-namespace ZMJCoder\ApiNexa\Support;
+namespace ZeeshanMushtaq\ApiNexa\Support;
 
 final readonly class ValidationResult
 {

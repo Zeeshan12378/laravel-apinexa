@@ -1,13 +1,13 @@
 <?php
 
-namespace ZMJCoder\ApiNexa\Tests\Unit;
+namespace ZeeshanMushtaq\ApiNexa\Tests\Unit;
 
-use ZMJCoder\ApiNexa\Contracts\SchemaLoaderContract;
-use ZMJCoder\ApiNexa\Contracts\SchemaValidatorContract;
-use ZMJCoder\ApiNexa\Core\ApiRegistry;
-use ZMJCoder\ApiNexa\Core\SchemaLoader;
-use ZMJCoder\ApiNexa\Core\SchemaValidator;
-use ZMJCoder\ApiNexa\Tests\TestCase;
+use ZeeshanMushtaq\ApiNexa\Contracts\SchemaLoaderContract;
+use ZeeshanMushtaq\ApiNexa\Contracts\SchemaValidatorContract;
+use ZeeshanMushtaq\ApiNexa\Core\ApiRegistry;
+use ZeeshanMushtaq\ApiNexa\Core\SchemaLoader;
+use ZeeshanMushtaq\ApiNexa\Core\SchemaValidator;
+use ZeeshanMushtaq\ApiNexa\Tests\TestCase;
 
 class SchemaEngineTest extends TestCase
 {
