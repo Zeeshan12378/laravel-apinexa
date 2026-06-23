@@ -1,5 +1,6 @@
 {
     "name": "zeeshanmushtq/apinexa",
+    "version": "1.0.4",
     "description": "File-first API schema engine for Laravel with runtime registry, OpenAPI generation and signed API keys.",
     "keywords": [
         "laravel",
