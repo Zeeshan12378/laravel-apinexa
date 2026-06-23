@@ -150,14 +150,26 @@ class DiscoverCommand extends Command
             }
 
             if ($formRequestClass) {
-                $rules = $this->extractFormRequestRules($formRequestClass);
-                foreach ($rules as $fieldName => $fieldRules) {
+                try {
+                    $rules = $this->extractFormRequestRules($formRequestClass);
+                    foreach ($rules as $fieldName => $fieldRules) {
+                        $parameters[] = [
+                            'name' => $fieldName,
+                            'in' => 'body',
+                            'required' => in_array('required', (array) $fieldRules),
+                            'type' => $this->inferTypeFromRules((array) $fieldRules),
+                            'description' => "From {$formRequestClass}",
+                        ];
+                    }
+                } catch (\Exception $e) {
+                    // Form request has complex dependencies, skip parameter extraction
+                    // Add a generic parameter entry for documentation purposes
                     $parameters[] = [
-                        'name' => $fieldName,
+                        'name' => $param->getName(),
                         'in' => 'body',
-                        'required' => in_array('required', (array) $fieldRules),
-                        'type' => $this->inferTypeFromRules((array) $fieldRules),
-                        'description' => "From {$formRequestClass}",
+                        'required' => true,
+                        'type' => 'object',
+                        'description' => "Form request validation (see {$formRequestClass})",
                     ];
                 }
             }
@@ -169,8 +181,8 @@ class DiscoverCommand extends Command
     protected function extractFormRequestRules(string $formRequestClass): array
     {
         try {
-            $instance = app($formRequestClass);
-            $rules = $instance->rules();
+            $instance = @app($formRequestClass);
+            $rules = @$instance->rules();
             return is_array($rules) ? $rules : [];
         } catch (\Exception $e) {
             return [];
@@ -194,21 +206,16 @@ class DiscoverCommand extends Command
     protected function generateSchemaContent(string $controllerName, array $endpoints): string
     {
         $endpointsPhp = var_export($endpoints, true);
+        $controllerDisplayName = str_replace('Controller', '', $controllerName);
 
-        return <<<'PHP'
+        return <<<PHP
 <?php
 
 return [
-    'name' => '%s API',
-    'description' => 'Auto-discovered from %s controller',
-    'endpoints' => %s,
+    'name' => '{$controllerDisplayName} API',
+    'description' => 'Auto-discovered from {$controllerName} controller',
+    'endpoints' => {$endpointsPhp},
 ];
-PHP
-        . "\n"
-        . sprintf("return [\n    'name' => '%s API',\n    'description' => 'Auto-discovered from %s controller',\n    'endpoints' => %s,\n];\n",
-            str_replace('Controller', '', $controllerName),
-            $controllerName,
-            $endpointsPhp
-        );
+PHP;
     }
 }
