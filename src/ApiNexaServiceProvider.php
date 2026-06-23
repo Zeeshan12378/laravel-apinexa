@@ -4,6 +4,7 @@ namespace ZeeshanMushtaq\ApiNexa;
 
 use ZeeshanMushtaq\ApiNexa\Auth\ApiKeyManager;
 use ZeeshanMushtaq\ApiNexa\Auth\SignatureValidator;
+use ZeeshanMushtaq\ApiNexa\Commands\DiscoverCommand;
 use ZeeshanMushtaq\ApiNexa\Commands\DocsCommand;
 use ZeeshanMushtaq\ApiNexa\Commands\InstallCommand;
 use ZeeshanMushtaq\ApiNexa\Commands\ScanCommand;
@@ -82,6 +83,7 @@ class ApiNexaServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->commands([
                 InstallCommand::class,
+                DiscoverCommand::class,
                 ScanCommand::class,
                 DocsCommand::class,
             ]);

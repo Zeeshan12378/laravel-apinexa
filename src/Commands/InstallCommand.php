@@ -42,11 +42,16 @@ class InstallCommand extends Command
         }
 
         $this->newLine();
-        $this->components->info('APINEXA installed successfully.');
+        $this->components->info('ApiNexa installed successfully.');
         $this->line('Next steps:');
-        $this->line('  1. Add schema files to api-nexa/schemas/');
-        $this->line('  2. php artisan apinexa:scan');
-        $this->line('  3. php artisan apinexa:docs');
+        $this->line('  Option A - Auto-discover routes:');
+        $this->line('    1. php artisan apinexa:discover');
+        $this->line('    2. php artisan apinexa:docs');
+        $this->line('');
+        $this->line('  Option B - Manual schemas:');
+        $this->line('    1. Add schema files to api-nexa/schemas/');
+        $this->line('    2. php artisan apinexa:scan');
+        $this->line('    3. php artisan apinexa:docs');
 
         return self::SUCCESS;
     }
