@@ -3,6 +3,7 @@
 namespace ZeeshanMushtaq\ApiNexa\Contracts;
 
 use ZeeshanMushtaq\ApiNexa\Support\RegistrySnapshot;
+use ZeeshanMushtaq\ApiNexa\Support\EndpointDescriptor;
 
 interface ApiRegistryContract
 {
@@ -10,7 +11,7 @@ interface ApiRegistryContract
 
     public function all(): RegistrySnapshot;
 
-    public function find(string $method, string $uri, ?string $version = null): ?\APINEXA\Support\EndpointDescriptor;
+    public function find(string $method, string $uri, ?string $version = null): ?EndpointDescriptor;
 
     public function reload(): RegistrySnapshot;
 
